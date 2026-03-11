@@ -1,0 +1,47 @@
+---
+title: Pagination
+description: How pagination works on the Fluxbase API.
+---
+
+## Overview
+
+Endpoints that return lists of resources support pagination via `limit` and `offset` query parameters.
+
+## Parameters
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `limit` | `integer` | `20` | The number of results to return. Maximum of `100`. |
+| `offset` | `integer` | `0` | The number of results to skip before returning. |
+
+## Example
+
+To fetch the first page of results:
+```http
+GET /categories/moderation?limit=20&offset=0
+```
+
+To fetch the next page, increment the offset by the limit:
+```http
+GET /categories/moderation?limit=20&offset=20
+```
+
+## Response
+
+Paginated endpoints will always include a `total` field in the response, representing the total number of results available. You can use this alongside your current `offset` and `limit` to determine if there are more results to fetch.
+```json
+{
+  "success": true,
+  "total": 143,
+  "bots": [...]
+}
+```
+
+## Checking for more results
+
+You have reached the end of the results when:
+```
+offset + limit >= total
+```
+
+For example, if `total` is `143`, `limit` is `20` and `offset` is `140`, the next page would exceed the total so there are no more results to fetch.

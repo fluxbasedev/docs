@@ -1,0 +1,40 @@
+---
+title: Verification process
+description: How Fluxbase verifies that you own the bot you're listing.
+---
+
+## Why do we verify?
+
+Verification exists to ensure that only the actual owner of a bot can list it on Fluxbase. This prevents impersonation and keeps the platform trustworthy for everyone.
+
+## How it works
+
+When you add a bot to Fluxbase, a unique verification code is generated for you. To verify ownership, you need to paste this code somewhere in your bot's bio on Fluxer, then click **Complete Verification** on the Fluxbase dashboard.
+
+Fluxbase will check your bot's bio for the code and confirm ownership. Once verified, you can remove the code from your bot's bio.
+
+<Note>
+  In the future, we hope for Fluxer to implement an `applications` OAuth2 scope, which would allow us to verify ownership automatically on our end, no bio tinkering or verification codes required.
+  If you'd like this happen, consider upvoting our [GitHub discussion](https://github.com/orgs/fluxerapp/discussions/646) to help it gain traction.
+</Note>
+
+## Verification codes
+
+- Verification codes are unique to each bot and expire after **7 days**
+- You have a maximum of **3 attempts** to verify your bot
+- If all attempts are exhausted, your submission will be automatically removed and you'll need to start over
+- If your code expires before you verify, you can generate a new one from your dashboard
+
+<Warning>
+  If you do not verify your bot within 7 days of starting the process, your submission will be automatically removed.
+</Warning>
+
+## Troubleshooting
+
+If verification is failing, make sure:
+
+- The code is pasted into your bot's **bio** specifically, not a status or username
+- The code is pasted exactly as shown, with no extra spaces or characters
+- The code hasn't expired - if it has, generate a new one from your dashboard
+
+If you're still having trouble, reach out to us in the official [Fluxbase Support Server](https://fluxer.gg/fluxbase).

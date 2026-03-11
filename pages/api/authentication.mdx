@@ -1,0 +1,35 @@
+---
+title: Authentication
+description: How to authenticate with the Fluxbase API.
+---
+
+## Overview
+
+The Fluxbase API uses API keys for authentication. API keys are tied to your Fluxbase account and can be created and managed from your [developer dashboard](https://fluxbase.dev/users/@me/developers).
+
+## Using your API key
+
+Include your API key in the `Authorization` header of every request:
+```http
+Authorization: <api-key>
+```
+
+<Warning>
+  Keep your API key private. Do not share it publicly or commit it to source control. If your key is compromised, regenerate it immediately from your dashboard.
+</Warning>
+
+## Managing API keys
+
+From your developer dashboard you can:
+
+- Create new API keys
+- Regenerate an existing key
+- Delete keys you no longer need
+
+<Note>
+  Your API key is only shown once at the time of creation. Make sure to copy it somewhere safe. If you lose it, you'll need to regenerate it.
+</Note>
+
+## Unauthenticated endpoints
+
+Some endpoints do not require authentication, such as fetching public bot information, categories, and search. These are marked as public in the [API reference](/api-reference).

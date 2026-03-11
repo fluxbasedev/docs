@@ -1,0 +1,57 @@
+---
+title: Error Codes & Responses
+description: A reference for error codes and responses returned by the Fluxbase API.
+---
+
+## Response format
+
+All API responses follow a consistent format. Successful responses will always include `success: true`, and error responses will always include `success: false` and a `message` describing the error.
+
+**Success**
+```json
+{
+  "success": true,
+  ...
+}
+```
+
+**Error**
+```json
+{
+  "success": false,
+  "message": "A description of what went wrong."
+}
+```
+
+## HTTP status codes
+
+| Status Code | Description |
+| ----------- | ----------- |
+| `200` | Request was successful |
+| `400` | Bad request, check your request body or parameters |
+| `401` | Missing or invalid API key |
+| `403` | You do not have permission to perform this action |
+| `404` | The requested resource was not found |
+| `409` | A conflict occurred, such as a submission already being in review |
+| `429` | You have exceeded the rate limit |
+| `500` | An internal server error occurred on our end |
+
+## Common errors
+
+### 401 Unauthorized
+Your API key is missing or invalid. Make sure you are passing your API key correctly in the `Authorization` header.
+
+### 403 Forbidden
+You do not have permission to perform this action. This could mean you are trying to access a resource that belongs to another user, or an endpoint that requires a higher permission level.
+
+### 404 Not Found
+The requested resource does not exist. Double check the ID or slug you are using in your request.
+
+### 409 Conflict
+A conflict occurred with the current state of the resource. For example, trying to edit a bot submission that is currently in review.
+
+### 429 Too Many Requests
+You have exceeded the rate limit. Wait until the current window resets before making further requests. See the [Rate Limiting](/api/rate-limiting) guide for more information.
+
+### 500 Internal Server Error
+Something went wrong on our end. If this persists, please report it via the [bug report](https://fluxbase.dev/bug-report) page.

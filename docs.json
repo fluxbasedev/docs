@@ -1,13 +1,16 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "maple",
+  "name": "Fluxbase Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4541D9",
+    "light": "#4541D9",
+    "dark": "#4541D9"
   },
   "favicon": "/favicon.svg",
+  "api": {
+    "openapi": "https://api.fluxbase.dev/openapi.json"
+  },
   "navigation": {
     "tabs": [
       {
@@ -16,69 +19,61 @@
           {
             "group": "Getting started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "/pages/getting-started/index",
+              "/pages/getting-started/changelog",
+              "/pages/getting-started/listing-first-bot",
+              "/pages/getting-started/verification-process"
             ]
           },
           {
-            "group": "Customization",
+            "group": "API",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "/pages/api/authentication",
+              "/pages/api/error-codes-responses",
+              "/pages/api/pagination",
+              "/pages/api/rate-limiting"
             ]
           }
         ]
       },
       {
         "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
+        "openapi": "https://api.fluxbase.dev/openapi.json"
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Fluxbase",
+          "href": "https://fluxbase.dev",
+          "icon": {
+            "name": "home",
+            "style": "duotone"
+          }
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Fluxer Community",
+          "href": "https://fluxer.gg/fluxbase",
+          "icon": {
+            "name": "external-link",
+            "style": "duotone"
+          }
+        },
+        {
+          "anchor": "Contact",
+          "href": "mailto:contact@fluxbase.dev",
+          "icon": {
+            "name": "at",
+            "style": "duotone"
+          }
+        },
+        {
+          "anchor": "Donate",
+          "href": "https://github.com/sponsors/fluxbasedev",
+          "icon": {
+            "name": "heart",
+            "style": "duotone"
+          }
         }
       ]
     }
@@ -87,36 +82,9 @@
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/fluxbasedev"
     }
   }
 }

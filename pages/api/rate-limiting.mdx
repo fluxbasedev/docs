@@ -1,0 +1,43 @@
+---
+title: Rate Limiting
+description: How rate limiting works on the Fluxbase API.
+---
+
+## Overview
+
+The Fluxbase API uses rate limiting to ensure fair usage and protect the platform from abuse. Rate limits are applied per IP address.
+
+## Limits
+
+Rate limits are applied separately for read and write operations:
+
+| Type | Limit |
+| ---- | ----- |
+| GET requests | 60 requests per minute |
+| GET requests | 1000 requests per hour |
+| POST, PATCH, DELETE requests | 20 requests per minute |
+| POST, PATCH, DELETE requests | 200 requests per hour |
+
+Both the per-minute and per-hour limits apply simultaneously, so exceeding either will result in a rate limit error.
+
+## Rate limit headers
+
+When making requests to the API, the following headers are returned to help you track your current usage:
+
+| Header | Description |
+| ------ | ----------- |
+| `RateLimit-Limit` | The maximum number of requests allowed in the current window |
+| `RateLimit-Remaining` | The number of requests remaining in the current window |
+| `RateLimit-Reset` | The time at which the current window resets, in UTC epoch seconds |
+
+## Handling rate limits
+
+When you exceed a rate limit, the API will respond with a `429 Too Many Requests` status code:
+```json
+{
+  "success": false,
+  "message": "Too many requests, please try again later."
+}
+```
+
+When you receive a `429`, wait until the current window resets before making further requests. The `RateLimit-Reset` header will tell you exactly when that is.
