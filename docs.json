@@ -20,7 +20,6 @@
             "group": "Getting started",
             "pages": [
               "/pages/getting-started/index",
-              "/pages/getting-started/changelog",
               "/pages/getting-started/listing-first-bot",
               "/pages/getting-started/verification-process"
             ]
