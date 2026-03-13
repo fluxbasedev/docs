@@ -13,9 +13,9 @@ Rate limits are applied separately for read and write operations:
 
 | Type | Limit |
 | ---- | ----- |
-| GET requests | 60 requests per minute |
+| GET requests | 80 requests per minute |
 | GET requests | 1000 requests per hour |
-| POST, PATCH, DELETE requests | 20 requests per minute |
+| POST, PATCH, DELETE requests | 40 requests per minute |
 | POST, PATCH, DELETE requests | 200 requests per hour |
 
 Both the per-minute and per-hour limits apply simultaneously, so exceeding either will result in a rate limit error.
