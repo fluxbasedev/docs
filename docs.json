@@ -74,6 +74,14 @@
             "name": "heart",
             "style": "duotone"
           }
+        },
+        {
+          "anchor": "Changelog",
+          "href": "/changelog",
+          "icon": {
+            "name": "list",
+            "style": "duotone"
+          }
         }
       ]
     }
