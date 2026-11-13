@@ -3,9 +3,9 @@
   "theme": "maple",
   "name": "Fluxbase Documentation",
   "colors": {
-    "primary": "#4541D9",
-    "light": "#4541D9",
-    "dark": "#4541D9"
+    "primary": "#3e91fd",
+    "light": "#3e91fd",
+    "dark": "#3e91fd"
   },
   "favicon": "/favicon.svg",
   "api": {
